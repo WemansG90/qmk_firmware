@@ -34,9 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 150
 
 #undef	BACKLIGHT_LEVELS
-#define	BACKLIGHT_LEVELS 8
-#define BACKLIGHT_BREATHING
-#define BREATHING_PERIOD 8
+#define	BACKLIGHT_LEVELS 6 
 
 #undef  RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
