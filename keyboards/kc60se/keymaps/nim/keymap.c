@@ -52,10 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *|       |    |      |                            |    | Stop |    |        |
  *`--------------------------------------------------------------------------'
 */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Added legend for layer 2
+
 /* Layer 2
  *,--------------------------------------------------------------------------.
  *|    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |
@@ -69,18 +66,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *|       |    |      |                            |    |      |    |        |
  *`--------------------------------------------------------------------------'
 */
-<<<<<<< HEAD
-=======
->>>>>>> Re-added custom kc60se map after git reset
-=======
->>>>>>> Added legend for layer 2
+
   [_DEFAULT] = LAYOUT_60_ansi( /* HHKB QWERTY w/full bottom row */
       KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,   KC_5,   KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSLS, \
       KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSPC, \
       KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,           KC_ENT, \
       KC_LSFT,          KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
-<<<<<<< HEAD
-<<<<<<< HEAD
       MO(_FN2),KC_LALT, MO(_FN1),                 KC_SPC,                   KC_RALT, KC_LGUI, KC_APP,  MO(_FN3) \
       ),
   [_FN1] = LAYOUT_60_ansi( /* Layer 1 */
@@ -88,7 +79,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_CAPS, xxxxxx,  xxxxxx,  xxxxxx,  xxxxxx, xxxxxx, xxxxxx,  KC_PGUP, KC_HOME, KC_PGDN, KC_PSCR, KC_SLCK, KC_PAUS, KC_DEL, \
       xxxxxx,  KC_VOLD, KC_VOLU, KC_MUTE, xxxxxx, xxxxxx, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LEFT,          xxxxxx,  xxxxxx, \
       xxxxxx,           KC_MPRV, KC_MPLY, KC_MNXT,BL_ON,  BL_STEP, KC_END,  KC_PSLS, KC_PAST, KC_PMNS, KC_PPLS, xxxxxx, \
-=======
       MO(_FN2),KC_LALT, MO(_FN1),                 KC_SPC,                   KC_RALT,  KC_RALT, KC_LGUI, KC_APP \
       ),
   [_FN1] = LAYOUT_60_ansi( /* Layer 1 */
@@ -96,8 +86,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_CAPS, BL_ON,   BL_STEP, xxxxxx,  xxxxxx, xxxxxx, xxxxxx,  KC_PGUP,  KC_HOME, KC_PGDN, KC_PSCR, KC_SLCK, KC_PAUS, KC_DEL, \
       xxxxxx,  KC_VOLD, KC_VOLU, KC_MUTE, xxxxxx, xxxxxx, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_LEFT, xxxxxx, xxxxxx, \
       xxxxxx,  KC_MPRV, KC_MPLY, KC_MNXT, xxxxxx, xxxxxx, KC_END, KC_PSLS, KC_PAST,  KC_PMNS, KC_PPLS, xxxxxx, \
->>>>>>> Re-added custom kc60se map after git reset
-=======
       MO(_FN2),KC_LALT, MO(_FN1),                 KC_SPC,                   KC_RALT, KC_LGUI, KC_APP,  MO(_FN3) \
       ),
   [_FN1] = LAYOUT_60_ansi( /* Layer 1 */
