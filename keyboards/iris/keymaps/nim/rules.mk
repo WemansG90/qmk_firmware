@@ -4,10 +4,10 @@ EXTRAKEY_ENABLE   = yes       # Audio control and System control(+450)
 CONSOLE_ENABLE    = no         # Console for debug(+400)
 COMMAND_ENABLE    = no        # Commands for debug and configuration
 AUDIO_ENABLE      = no
-NKRO_ENABLE	  = yes
+NKRO_ENABLE	      = yes
 RGBLIGHT_ENABLE   = yes
 BACKLIGHT_ENABLE  = yes
-BOOTLOADER 	  = qmk-dfu
+BOOTLOADER 	      = qmk-dfu
 
 ifndef QUANTUM_DIR
 	include ../../../../Makefile
