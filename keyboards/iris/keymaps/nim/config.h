@@ -18,14 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 /* Use I2C or Serial, not both */
-
-//#undef USE_SERIAL
 #define USE_I2C
 
 /* Select hand configuration */
-
-// #define MASTER_LEFT
-// #define MASTER_RIGHT
 #define EE_HANDS
 
 /* TODO: figure out how to get I2C working for both the OLEDs and the matrix */
@@ -38,13 +33,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define	BACKLIGHT_LEVELS 6 
 
 #undef  RGBLED_NUM
-#define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 12
-#define RGBLIGHT_HUE_STEP 8
-#define RGBLIGHT_SAT_STEP 8
-#define RGBLIGHT_VAL_STEP 8
+#define RGBLIGHT_HUE_STEP 10
+#define RGBLIGHT_SAT_STEP 10
+#define RGBLIGHT_VAL_STEP 10
 
 #define QMK_ESC_OUTPUT F1 // usually COL
 #define QMK_ESC_INPUT D5 // usually ROW
 #define QMK_LED B0
-#define QMK_SPEAKER C6
+
