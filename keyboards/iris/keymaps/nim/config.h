@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 /* Use I2C or Serial, not both */
-#define USE_I2C
+#define I2C
 
 /* Select hand configuration */
 #define EE_HANDS
@@ -41,4 +41,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define QMK_ESC_OUTPUT F1 // usually COL
 #define QMK_ESC_INPUT D5 // usually ROW
 #define QMK_LED B0
+
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
+
 
