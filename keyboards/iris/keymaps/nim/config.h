@@ -23,9 +23,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Select hand configuration */
 #define EE_HANDS
 
-/* TODO: figure out how to get I2C working for both the OLEDs and the matrix */
-//#define SSD1306OLED
-
 #define TAPPING_TERM 150
 #define PREVENT_STUCK_MODIFIERS
 
