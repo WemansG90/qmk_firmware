@@ -53,5 +53,6 @@ NKRO_ENABLE = yes	    # USB Nkey Rollover
 CUSTOM_MATRIX = yes # Custom matrix file
 AUDIO_ENABLE = yes
 RGBLIGHT_ENABLE = no
+RGB_MATRIX_ENABLE = WS2812
 # SERIAL_LINK_ENABLE = yes
 ENCODER_ENABLE = yes
