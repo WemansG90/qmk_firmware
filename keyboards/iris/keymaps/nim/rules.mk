@@ -8,6 +8,7 @@ NKRO_ENABLE	      = yes
 RGBLIGHT_ENABLE   = yes
 BACKLIGHT_ENABLE  = yes
 BOOTLOADER 	      = qmk-dfu
+EXTRAFLAGS        += -flto
 
 ifndef QUANTUM_DIR
 	include ../../../../Makefile
