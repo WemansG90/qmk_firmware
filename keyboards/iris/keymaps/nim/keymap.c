@@ -17,8 +17,8 @@ enum custom_keycodes {
 #define KC_ KC_TRNS
 #define _______ KC_TRNS
 
-#define KC_CAPW LCTL(LALT(KC_2))	// Capture whole screen
-#define KC_CAPA LCTL(LALT(KC_3))  	// Capture active window
+#define KC_CAPW LCTL(LALT(KC_2))	    // Capture whole screen
+#define KC_CAPA LCTL(LALT(KC_3))  	    // Capture active window
 #define KC_CAPP LCTL(LALT(KC_4))        // Capture portion of screen
 #define KC_ESCC MT(MOD_LCTL, KC_ESC)    // Control (hold), Escape (tap)
 #define KC_BACK LGUI(KC_LEFT)           // Browser Back
@@ -26,7 +26,7 @@ enum custom_keycodes {
 #define KC_LOWR LOWER
 #define KC_RASE RAISE
 #define KC_BL_S BL_STEP
-#define KC_ENTS MT(MOD_LSFT, KC_ENT)
+#define KC_ENTS MT(MOD_LSFT, KC_ENT)     // Shift (hold), Enter (tap)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
