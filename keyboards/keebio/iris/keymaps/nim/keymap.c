@@ -20,7 +20,6 @@ enum custom_keycodes {
 #define KC_CAPW LCTL(LALT(KC_2))	    // Capture whole screen
 #define KC_CAPA LCTL(LALT(KC_3))  	    // Capture active window
 #define KC_CAPP LCTL(LALT(KC_4))        // Capture portion of screen
-#define KC_ESCC MT(MOD_LCTL, KC_ESC)    // Control (hold), Escape (tap)
 #define KC_BACK LGUI(KC_LEFT)           // Browser Back
 #define KC_FORW LGUI(KC_RIGHT)          // Browser Forward
 #define KC_LOWR LOWER
@@ -32,27 +31,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_kc(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-     GRV , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,MINS,
+     GESC, 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,MINS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      TAB , Q  , W  , E  , R  , T  ,                Y  , U  , I  , O  , P  ,PLUS,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     ESCC, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,QUOT,
+     LCTL, A  , S  , D  , F  , G  ,                H  , J  , K  , L  ,SCLN,QUOT,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LSFT, Z  , X  , C  , V  , B  ,LALT,     RALT, N  , M  ,COMM,DOT ,SLSH,DEL ,
+     LSFT, Z  , X  , C  , V  , B  ,LGUI,     RALT, N  , M  ,COMM,DOT ,SLSH,DEL ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       LGUI,LOWR,SPC ,         BSPC,ENTS,RASE
+                       LALT,LOWR,SPC ,         BSPC,ENTS,RASE
   //                  `----+----+----'        `----+----+----'
   ),
 
   [_LOWER] = LAYOUT_kc(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-     TILD,EXLM, AT ,HASH,DLR ,PERC,               CIRC,AMPR,ASTR,LPRN,RPRN,BSPC,
+    GRAVE, F1 , F2 , F3 , F4 , F5 ,               CIRC,AMPR,ASTR,LPRN,RPRN,BSPC,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         , 1  , 2  , 3  , 4  , 5  ,                6  , 7  , 8  , 9  , 0  ,    ,
+     DEL , F6 , F7 , F8 , F9 ,F10 ,                P6 , P7 , P8 , P9 , P0 ,    ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-     DEL ,    ,LEFT,RGHT, UP ,LBRC,               RBRC, P4 , P5 , P6 ,PLUS,PIPE,
+         ,    ,LEFT,RGHT, UP ,LBRC,               RBRC,    ,    ,    ,PLUS,PIPE,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     BL_S,CAPW,CAPA,CAPP,DOWN,LCBR,LPRN,     RPRN,RCBR, P1 , P2 , P3 ,MINS,    ,
+      P1 , P2 , P3 , P4 ,DOWN,LCBR,LPRN,     RPRN,RCBR,    ,    ,    ,MINS,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,DEL ,         DEL ,    ,
   //                  `----+----+----'        `----+----+----'
@@ -66,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      DEL ,MPRV,BACK,FORW,PGUP,UNDS,               EQL ,HOME,    ,    ,    ,BSLS,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     MUTE,MSTP,MPLY,VOLD,PGDN,MINS,    ,         ,PLUS,END ,    ,    ,    ,    ,
+     MUTE,MSTP,MPLY,VOLD,PGDN,MINS,    ,         ,PLUS,END ,CAPW,CAPA,CAPP,BL_S,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
                            ,    ,    ,             ,    ,
   //                  `----+----+----'        `----+----+----'
