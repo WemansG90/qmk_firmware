@@ -1,2 +1,2 @@
 SRC += muse.c
-RGBLIGHT_ENABLE = no
+RGBLIGHT_ENABLE = yes
