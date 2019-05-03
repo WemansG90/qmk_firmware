@@ -31,6 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #undef  RGBLED_NUM
 #define RGBLED_NUM 12
+#define RGBLED_SPLIT { 6, 6 }
 #define RGBLIGHT_HUE_STEP 10
 #define RGBLIGHT_SAT_STEP 10
 #define RGBLIGHT_VAL_STEP 10
