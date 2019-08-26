@@ -56,42 +56,44 @@ enum macro_keycodes {
 #define KC_CAPW LCTL(LALT(KC_2))	    // Capture whole screen
 #define KC_CAPA LCTL(LALT(KC_3))  	    // Capture active window
 #define KC_CAPP LCTL(LALT(KC_4))        // Capture portion of screen
-#define KC_ESCC MT(MOD_LCTL, KC_ESC
+#define KC_ESCC MT(MOD_LCTL, KC_ESC)    // Control (hold), Escape (tap)
+#define KC_ENTS MT(MOD_LSFT, KC_ENT)    // Shift (hold), Enter (tap)
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-       TAB,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  BSPC,\
+       TAB,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  RALT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        ESCC,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  RSFT,\
+       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  DEL,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   LGUI, LOWER,   SPC,      ENT, RAISE,  RALT \
+                                   LGUI, LOWER,   SPC,     BSPC, ENTS,  RAISE\
                               //`--------------------'  `--------------------'
   ),
 
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-       CAPS,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSPC,\
+       CAPS,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       ESCC,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,    F9,   F10, XXXXX,\
+      _____,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,    F9,   F10, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,  LEFT, DOWN,     UP, RIGHT,   F15,                    F11,   F12, CAPW , CAPA , CAPP , XXXXX,\
+      _____,  LEFT, DOWN,     UP, RIGHT,   F15,                    F11,   F12, CAPW , CAPA , CAPP , _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   LGUI, LOWER,   SPC,      ENT, RAISE,  RALT \
+                                  _____, _____,_____,     _____, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      XXXXX,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN,  BSPC,\
+      XXXXX,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN,  TILD,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       ESCC,  VOLD,  VOLU, XXXXX, XXXXX, XXXXX,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+      _____,  VOLD,  VOLU, XXXXX, XXXXX, XXXXX,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,  MPLY,  MPRV,  MNXT, XXXXX, XXXXX,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
+      _____,  MPLY,  MPRV,  MNXT, XXXXX, XXXXX,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   LGUI, LOWER,   SPC,      ENT, RAISE,  RALT \
+                                  _____, _____,_____,     _____, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
@@ -103,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LMOD,  LHUD,  LSAD,  LVAD, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                   LGUI, LOWER,   SPC,      ENT, RAISE,  RALT \
+                                   _____, _____,_____,     _____, _____, _____ \
                               //`--------------------'  `--------------------'
   )
 };
@@ -146,8 +148,8 @@ const char *read_keylogs(void);
 
 // const char *read_mode_icon(bool swap);
 // const char *read_host_led_state(void);
-// void set_timelog(void);
-// const char *read_timelog(void);
+//void set_timelog(void);
+//const char *read_timelog(void);
 
 void matrix_scan_user(void) {
    iota_gfx_task();
