@@ -30,9 +30,7 @@ enum custom_keycodes {
   QWERTY = SAFE_RANGE,
   LOWER,
   RAISE,
-  ADJUST,
-  BACKLIT,
-  RGBRST
+  ADJUST
 };
 
 enum macro_keycodes {
@@ -44,7 +42,6 @@ enum macro_keycodes {
 #define KC_LOWER LOWER
 #define KC_RAISE RAISE
 #define KC_RST   RESET
-#define KC_LRST  RGBRST
 #define KC_LTOG  RGB_TOG
 #define KC_LHUI  RGB_HUI
 #define KC_LHUD  RGB_HUD
@@ -53,6 +50,9 @@ enum macro_keycodes {
 #define KC_LVAI  RGB_VAI
 #define KC_LVAD  RGB_VAD
 #define KC_LMOD  RGB_MOD
+#define KC_RMOD  RGB_RMOD
+#define KC_LSPU  RGB_SPI
+#define KC_LSPD  RGB_SPD
 #define KC_CAPW LCTL(LALT(KC_2))	    // Capture whole screen
 #define KC_CAPA LCTL(LALT(KC_3))  	    // Capture active window
 #define KC_CAPP LCTL(LALT(KC_4))        // Capture portion of screen
@@ -99,11 +99,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        RST,  LRST, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
+        RST,  LMOD,  RMOD, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LTOG,  LHUI,  LSAI,  LVAI, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
+       LTOG,  LHUI,  LSAI,  LVAI,  LSPU, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LMOD,  LHUD,  LSAD,  LVAD, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
+      XXXXX,  LHUD,  LSAD,  LVAD,  LSPD, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                    _____, _____,_____,     _____, _____, _____ \
                               //`--------------------'  `--------------------'
@@ -125,11 +125,31 @@ void update_tri_layer_RGB(uint8_t layer1, uint8_t layer2, uint8_t layer3) {
     layer_off(layer3);
   }
 }
+#ifdef RGB_MATRIX_ENABLE
+
+static bool is_suspended;
+static bool rgb_matrix_enabled;
+
+void suspend_power_down_keymap(void) {
+    rgb_matrix_set_suspend_state(true);
+    if (!is_suspended) {
+        is_suspended = true;
+        rgb_matrix_enabled = (bool)rgb_matrix_config.enable;
+        rgb_matrix_disable_noeeprom();
+    }
+}
+
+void suspend_wakeup_init_keymap(void) {
+    rgb_matrix_set_suspend_state(false);
+    is_suspended = false;
+    if (rgb_matrix_enabled) {
+        rgb_matrix_enable_noeeprom();
+    }
+}
+
+#endif
 
 void matrix_init_user(void) {
-    #ifdef RGBLIGHT_ENABLE
-      RGB_current_mode = rgblight_config.mode;
-    #endif
     //SSD1306 OLED init, make sure to add #define SSD1306OLED in config.h
     #ifdef SSD1306OLED
         iota_gfx_init(!has_usb());   // turns on the display
@@ -227,25 +247,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
         break;
-    case RGB_MOD:
-      #ifdef RGBLIGHT_ENABLE
-        if (record->event.pressed) {
-          rgblight_mode(RGB_current_mode);
-          rgblight_step();
-          RGB_current_mode = rgblight_config.mode;
-        }
-      #endif
-      return false;
-      break;
-    case RGBRST:
-      #ifdef RGBLIGHT_ENABLE
-        if (record->event.pressed) {
-          eeconfig_update_rgblight_default();
-          rgblight_enable();
-          RGB_current_mode = rgblight_config.mode;
-        }
-      #endif
-      break;
   }
   return true;
 }
