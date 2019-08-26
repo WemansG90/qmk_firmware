@@ -18,7 +18,7 @@ BLUETOOTH_ENABLE           = no  # Enable Bluetooth with the Adafruit EZ-Key HID
 RGBLIGHT_ENABLE            = no  # Enable WS2812 RGB underlight.
 SWAP_HANDS_ENABLE          = no  # Enable one-hand typing
 RGB_MATRIX_ENABLE          = WS2812
-RGB_MATRIX_SPLIT_RIGHT=yes
+#RGB_MATRIX_SPLIT_RIGHT=yes
 
 OLED_DRIVER_ENABLE = yes
 
