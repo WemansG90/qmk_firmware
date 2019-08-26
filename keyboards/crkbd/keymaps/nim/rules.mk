@@ -20,14 +20,16 @@ SWAP_HANDS_ENABLE          = no  # Enable one-hand typing
 RGB_MATRIX_ENABLE          = WS2812
 RGB_MATRIX_SPLIT_RIGHT=yes
 
+OLED_DRIVER_ENABLE = yes
+
 EXTRAFLAGS        += -flto
 BOOTLOADER = qmk-dfu
 
-SRC +=  ./lib/glcdfont.c \
-        ./lib/rgb_state_reader.c \
-        ./lib/layer_state_reader.c \
-        ./lib/logo_reader.c \
-        ./lib/keylogger.c \
+# SRC +=  ./lib/glcdfont.c \
+#         ./lib/rgb_state_reader.c \
+#         ./lib/layer_state_reader.c \
+#         ./lib/logo_reader.c \
+#         ./lib/keylogger.c \
 
 
 

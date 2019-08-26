@@ -22,7 +22,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define EE_HANDS
 
-#define SSD1306OLED
+//#define SSD1306OLED
+//#define USE_I2C
+
+#undef USE_I2C
+#undef SSD1306OLED
 
 #define USE_SERIAL_PD2
 
@@ -42,3 +46,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define RGB_MATRIX_VAL_STEP 8
 #    define RGB_MATRIX_SPD_STEP 10
 #endif
+
+#define OLED_FONT_H "keyboards/crkbd/keymaps/nim/glcdfont.c"
+// #define OLED_FONT_WIDTH 5
+// #define OLED_FONT_HEIGHT 7
+
+#define OLED_DISABLE_TIMEOUT
