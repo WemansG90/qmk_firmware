@@ -21,26 +21,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define I2C
 
 /* Select hand configuration */
-#define EE_HANDS
 
 #define TAPPING_TERM 150
 #define PREVENT_STUCK_MODIFIERS
 
-#define RGBLED_SPLIT { 6, 6 }
-#define RGBLIGHT_HUE_STEP 8
-#define RGBLIGHT_SAT_STEP 8
-#define RGBLIGHT_VAL_STEP 8
 #define RGBLIGHT_LIMIT_VAL 200
 #define RGBLIGHT_ANIMATIONS
-#define RGBLIGHT_EFFECT_KNIGHT_LENGTH 2
-#define RGBLIGHT_EFFECT_SNAKE_LENGTH 2
-#define RGBLIGHT_EFFECT_BREATHE_CENTER 1
 
-#define QMK_ESC_OUTPUT F1 // usually COL
-#define QMK_ESC_INPUT D5 // usually ROW
-#define QMK_LED B0
-
+#define GRAVE_ESC_CTRL_OVERRIDE
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
+
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 5
 
 
