@@ -1,0 +1,13 @@
+BOOTMAGIC_ENABLE = lite     # Virtual DIP switch configuration
+MOUSEKEY_ENABLE   = no      # Mouse keys(+4700)
+EXTRAKEY_ENABLE   = yes     # Audio control and System control(+450)
+CONSOLE_ENABLE    = no      # Console for debug(+400)
+COMMAND_ENABLE    = no      # Commands for debug and configuration
+AUDIO_ENABLE      = no
+NKRO_ENABLE	      = no
+RGBLIGHT_ENABLE   = no
+BACKLIGHT_ENABLE  = no
+BOOTLOADER 	      = qmk-dfu
+EXTRAFLAGS        += -flto
+ENCODER_ENABLE = yes
+KEY_LOCK_ENABLE = yes
